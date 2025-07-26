@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>Upload Your Research File</h2>
+<form id="uploadForm">
+  <input type="text" id="filename" placeholder="Enter file name" required />
+  <button type="submit">Upload</button>
+</form>
+
+<p id="uploadMessage"></p>
+
+<a href="library.html">Go to Library</a>
+    <h1>Welcome, <span id="usernameDisplay"></span>!</h1>
+<button onclick="logout()">Logout</button>
+  <h1>Welcome to Your Dashboard</h1>
+  <p>You are now logged in.</p>
+
+  <button onclick="logout()">Logout</button>
+
+  <script>
+    function logout() {
+      alert("Logging out...");
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>
