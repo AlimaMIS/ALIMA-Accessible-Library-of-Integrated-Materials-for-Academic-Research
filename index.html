@@ -1,0 +1,128 @@
+<section class="bg-white p-6 rounded-xl shadow max-w-4xl mx-auto mt-6 text-center">
+  <h2 class="text-2xl font-bold text-blue-900 mb-2">What is ALIMA?</h2>
+  <p class="text-gray-700 text-base leading-relaxed">
+    <strong>ALIMA</strong> (Accessible Library of Integrated Materials for Academic Research) is a digital platform designed for Grade 12 students of Mambuquiao Integrated School. It provides easy access to research guides, templates, and reference materials to support their academic writing and research journey.
+  </p>
+</section><!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ALIMA - Aklanon Learning and Inquiry Mobile App</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="mambuquiao-logo.png" />
+    <style>
+      /* Embedded styling for simplicity — you can move this to style.css */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(to right, #fdfbfb, #ebedee);
+        color: #333;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        padding: 2rem;
+      }
+
+      header {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      header img {
+        width: 100px;
+        height: auto;
+        border-radius: 12px;
+      }
+
+      h1 {
+        font-size: 2rem;
+        margin-top: 1rem;
+        color: #2b5876;
+      }
+
+      p.developer {
+        font-style: italic;
+        font-size: 0.95rem;
+        margin-top: 0.5rem;
+        color: #555;
+      }
+
+      main {
+        width: 100%;
+        max-width: 600px;
+        background: #fff;
+        padding: 2rem;
+        border-radius: 16px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .button {
+        display: inline-block;
+        margin-top: 1.5rem;
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        border: none;
+        border-radius: 10px;
+        background-color: #2b5876;
+        color: #fff;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .button:hover {
+        background-color: #1d3f54;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <img src="mambuquiao-logo.png" alt="Mambuquiao Integrated School Logo" />
+      <h1>Welcome to ALIMA</h1>
+      <p class="developer">Developed by Jelyn D. Nerbiol, MAEd</p>
+    </header>
+
+    <main>
+      <h2 style="text-align:center; margin-bottom: 1rem;">Your Research e-Library</h2>
+      <p style="text-align: center;">
+        Explore, upload, and access Aklanon research studies and educational resources curated for learners.
+      </p>
+
+      <div style="text-align: center;">
+        <a href="login.html" class="button">Log In as Student</a>
+        <a href="upload.html" class="button">Upload Research</a>
+      </div>
+    </main>
+
+    <!-- 📦 Service Worker registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker
+          .register('service-worker.js')
+          .then((reg) => console.log('✅ Service Worker registered:', reg))
+          .catch((err) => console.error('❌ Service Worker failed:', err));
+      }
+    </script>
+  </body><!-- Link the Manifest -->
+<link rel="manifest" href="manifest.json">
+
+<!-- Register Service Worker -->
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js')
+      .then(function(registration) {
+        console.log('Service Worker registered with scope:', registration.scope);
+      }, function(error) {
+        console.log('Service Worker registration failed:', error);
+      });
+  }
+</script>
+</html>

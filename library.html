@@ -2,29 +2,73 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Library | ALIMA</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ALIMA - Research Library</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <h1>Library of Research Files</h1>
+<body class="bg-gray-100 text-gray-800 font-sans">
 
-  <ul id="fileList">
-    <li>
-      <strong>Research on Climate Change.pdf</strong>
-      <button onclick="downloadFile('Research on Climate Change.pdf')">Download</button>
-    </li>
-    <li>
-      <strong>AI in Education.docx</strong>
-      <button onclick="downloadFile('AI in Education.docx')">Download</button>
-    </li>
-    <li>
-      <strong>Local Culture and Literature.doc</strong>
-      <button onclick="downloadFile('Local Culture and Literature.doc')">Download</button>
-    </li>
-  </ul>
+  <!-- Header -->
+  <header class="bg-blue-900 text-white p-4 shadow-md">
+    <h1 class="text-2xl font-bold">📚 Research Library</h1>
+    <p class="text-sm">Browse academic research papers by students and teachers</p>
+  </header>
 
-  <a href="dashboard.html">Back to Dashboard</a>
+  <!-- Main Content -->
+  <main class="p-4 space-y-6">
 
-  <script src="script.js" defer></script>
+    <!-- Search and Filter -->
+    <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+      <input type="text" placeholder="Search by title, author, or keyword…" class="w-full sm:w-2/3 px-4 py-2 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+      <select class="w-full sm:w-1/3 px-4 py-2 rounded-xl border border-gray-300 focus:outline-none">
+        <option value="">Filter by Strand</option>
+        <option value="STEM">STEM</option>
+        <option value="HUMSS">HUMSS</option>
+        <option value="ABM">ABM</option>
+        <option value="TVL">TVL</option>
+      </select>
+    </div>
+
+    <!-- Research List (Generic Placeholders) -->
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+      <!-- Placeholder Item -->
+      <div class="bg-white p-4 rounded-xl shadow-md">
+        <h3 class="text-lg font-bold">Student Research Title Here</h3>
+        <p class="text-sm text-gray-600">by [Student Name] • [Strand & Year]</p>
+        <p class="mt-2 text-sm">Abstract or brief description of the research paper goes here. This is a placeholder you can update later with actual student content.</p>
+        <div class="mt-3 flex justify-between items-center">
+          <button class="text-blue-600 underline">Read More</button>
+          <span class="text-xs px-2 py-1 bg-yellow-200 rounded-full">📌 Aklanon</span>
+        </div>
+      </div>
+
+      <!-- Another Placeholder -->
+      <div class="bg-white p-4 rounded-xl shadow-md">
+        <h3 class="text-lg font-bold">Student Research Title Here</h3>
+        <p class="text-sm text-gray-600">by [Student Name] • [Strand & Year]</p>
+        <p class="mt-2 text-sm">Brief research summary or abstract text placeholder. Use this format for every research file you want to display in the future.</p>
+        <div class="mt-3 flex justify-between items-center">
+          <button class="text-blue-600 underline">Read More</button>
+          <span class="text-xs px-2 py-1 bg-green-200 rounded-full">🔓 Public</span>
+        </div>
+      </div>
+
+      <!-- Add as many as needed... -->
+    </section>
+
+    <!-- Pagination (Optional) -->
+    <div class="flex justify-center mt-6">
+      <button class="px-4 py-2 mx-1 bg-white border rounded hover:bg-blue-100">Prev</button>
+      <button class="px-4 py-2 mx-1 bg-white border rounded hover:bg-blue-100">Next</button>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="mt-6 p-4 text-center text-sm text-gray-500">
+    © 2025 ALIMA App. Developed by Jelyn D. Nerbiol
+  </footer>
+
 </body>
 </html>

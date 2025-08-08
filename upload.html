@@ -2,21 +2,116 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Upload | ALIMA</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Upload Your Work | ALIMA</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #2f5d62;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 2rem auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #2f5d62;
+      text-align: center;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    label {
+      font-weight: 600;
+    }
+
+    input, select, textarea {
+      padding: 0.7rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    input[type="file"] {
+      border: none;
+    }
+
+    button {
+      background-color: #2f5d62;
+      color: white;
+      border: none;
+      padding: 0.8rem;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #244b50;
+    }
+  </style>
 </head>
 <body>
-  <h1>Upload a Research File</h1>
 
-  <form id="uploadForm">
-    <input type="file" id="fileInput" accept=".pdf,.doc,.docx" required />
-    <button type="submit">Upload</button>
-  </form>
+  <header>
+    <h1>📥 Upload Your Research</h1>
+  </header>
 
-  <p id="uploadStatus"></p>
+  <div class="container">
+    <h2>Submit Your Work to ALIMA</h2>
+    <form id="uploadForm">
+      <label for="title">Research Title</label>
+      <input type="text" id="title" name="title" required />
 
-  <a href="dashboard.html">Back to Dashboard</a>
+      <label for="author">Author(s)</label>
+      <input type="text" id="author" name="author" required />
 
-  <script src="script.js" defer></script>
+      <label for="strand">Strand</label>
+      <select id="strand" name="strand" required>
+        <option value="">Select strand</option>
+        <option value="STEM">STEM</option>
+        <option value="ABM">ABM</option>
+        <option value="HUMSS">HUMSS</option>
+        <option value="GAS">GAS</option>
+        <option value="TVL">TVL</option>
+      </select>
+
+      <label for="tags">Tags/Category (e.g. Climate, Health)</label>
+      <input type="text" id="tags" name="tags" placeholder="Separate with commas" />
+
+      <label for="file">Upload File (PDF or DOCX)</label>
+      <input type="file" id="file" name="file" accept=".pdf,.doc,.docx" required />
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("uploadForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      alert("Thank you! Your research has been submitted (simulation only).");
+      this.reset();
+    });
+  </script>
 </body>
 </html>
